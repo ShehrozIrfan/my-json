@@ -29,6 +29,25 @@ console.log(person.address.street);
 console.log(person.children[0]);
 
 
+var people = {
+    name: "John",
+    email: function() {
+        return "test@test.com"
+    },
+    function() {
+        return "Hello World"
+    }
+}
+console.log(people.email());
+//now convert that object to string
+people = JSON.stringify(people);
+//so the function will not be converted to JSON string, because JSON works with specific datatype that are(Number, String, Boolean, Array, Object, Null) - so it doesn't work with function.
+
+//excluding the function, remaining part will be converted to json.
+console.log(people);
+people = JSON.parse(people);
+console.log(people);
+
 
 //now we will fetch data from a JSON file
 
